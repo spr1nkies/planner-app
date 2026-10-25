@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#162335"><title>Planner</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar"><div class="brand"><span class="brand-icon" role="img" aria-label="Open planner"><svg viewBox="0 0 24 24" width="27" height="27" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5C9 3.5 5.5 3.5 2 4.5v15c3.5-1 7-1 10 1 3-2 6.5-2 10-1v-15c-3.5-1-7-1-10 1Z"/><path d="M12 5.5v15"/></svg></span><span class="brand-name">Planner</span><p>YOUR NEXT CHAPTER</p></div><nav class="nav" id="desktopNav"></nav><div class="sidebar-bottom"><b>Progress over perfection.</b><div>Even two focused hours can be a good day.</div><div class="side-progress"><i id="sideProgress" style="width:0%"></i></div><div style="margin-top:8px" id="sideProgressText"></div></div></aside>
+<main class="main"><div class="mobile-top"><button class="action secondary" data-menu="1">☰ All sections</button><nav class="mobile-dropdown hidden" id="mobileDropdown"></nav></div>
+<section id="page-overview" class="page active"></section>
+<section id="page-schedule" class="page"></section>
+<section id="page-daily" class="page"></section>
+<section id="page-weekly" class="page"></section>
+<section id="page-goals" class="page"></section>
+<section id="page-reviews" class="page"></section>
+<section id="page-finance" class="page"></section>
+<section id="page-data" class="page"></section>
+<section id="page-settings" class="page"></section>
+</main></div><nav class="mobile-nav" id="mobileNav"></nav>
+<script type="module" src="calendar-core.js"></script>
+<script src="app.js" defer></script>
+</body></html>

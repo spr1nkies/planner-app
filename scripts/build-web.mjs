@@ -1,0 +1,6 @@
+import {mkdir,copyFile,readFile,writeFile,rm} from 'node:fs/promises';
+const root=new URL('../',import.meta.url),dist=new URL('dist/',root),demo=process.argv.includes('--demo');
+await rm(dist,{recursive:true,force:true});await mkdir(new URL('vendor/',dist),{recursive:true});
+for(const name of ['index.html','styles.css','app.js','calendar-core.js','vendor/ical.js','vendor/ICAL-LICENSE'])await copyFile(new URL(name,root),new URL(name,dist));
+if(demo){await copyFile(new URL('public-demo.js',root),new URL('public-demo.js',dist));let html=await readFile(new URL('index.html',dist),'utf8');html=html.replace('<body>','<body>\n<div class="public-demo-notice" role="note">Public demo · Data is saved in your browser · Calendar file imports supported</div>').replace('<script src="app.js" defer>','<script src="public-demo.js" defer></script>\n<script src="app.js" defer>');await writeFile(new URL('index.html',dist),html);let app=await readFile(new URL('app.js',dist),'utf8');app=app.replace("const STORE='planner_app_v1'","const STORE='planner_public_demo_v1'");await writeFile(new URL('app.js',dist),app);await writeFile(new URL('.nojekyll',dist),'')}
+console.log(`Built ${demo?'public demo':'static app'} assets in dist/. No databases, backups or server files included.`);

@@ -1,0 +1,27 @@
+# Personal planner data and exports
+data/
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+*.json.backup
+*Backup*.json
+*backup*.json
+before-*.json
+*.ics
+*.zip
+*.tar.gz
+# Secrets and local runtime files
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+dist/
+.openai/
+.wrangler/
+.DS_Store
+Thumbs.db
